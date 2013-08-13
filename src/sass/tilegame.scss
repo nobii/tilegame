@@ -1,0 +1,7 @@
+@import "compass/reset";
+
+#tilegame {
+    position: absolute;
+    @import "shape";
+}
+

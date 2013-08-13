@@ -1,0 +1,12 @@
+{
+  "name": "tilegame",
+  "version": "0.1.0",
+  "main": "index.html",
+  "dependencies": {
+    "ejs-head-modules": "~0.0.1",
+    "ejs-sns-modules": "~0.0.2",
+    "jquery": "~2.0.3",
+    "inherits": "~0.0.1",
+    "EventEmitter": "~1.0.0"
+  }
+}
