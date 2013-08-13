@@ -132,3 +132,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: relative;
   border-color: black black transparent transparent;
 }
+
+/* line 8, ../src/sass/tilegame.scss */
+.socialbutton {
+  position: absolute;
+  bottom: 0px;
+  padding: 0.5em;
+}

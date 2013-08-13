@@ -1,7 +1,6 @@
 name: tilegame
 
-url:
-  http://example.com/
+url: ''
 
 root: '.'
 
