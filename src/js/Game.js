@@ -55,6 +55,7 @@ Game.prototype.arrangeShapes = function () {
     });
 
     this.updateHash();
+    this.updateLink();
 };
 
 Game.prototype.roundShapePosition = function (shape) {
@@ -91,4 +92,23 @@ Game.prototype.updateHash = function () {
     });
 
     location.href = '#' + hashCodes.join('_');
+};
+
+Game.prototype.updateLink = function () {
+    var url = encodeURIComponent(location.href),
+
+        linkURL = [
+            'https://twitter.com/intent/tweet',
+            '?original_referer=', url,
+            '&text=tilegame',
+            '&hashtags=tilegame',
+            '&tw_p=tweetbutton',
+            '&url=', url
+        ].join(''),
+
+    tweetbutton = document.getElementsByClassName('tweetbutton');
+
+    for (var i = 0; i < tweetbutton.length; i++) {
+        tweetbutton[i].href = linkURL;
+    }
 };

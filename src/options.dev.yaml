@@ -22,9 +22,9 @@ ios:
 
 sns:
   twitter:
-    sharetext:
-      tile game.      
-    sharehashtag: []
+    sharetext:      
+    sharehashtag:
+      - tilegame
 
   facebook:
     app_id: ''

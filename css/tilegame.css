@@ -63,7 +63,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 3, ../src/sass/tilegame.scss */
+/* line 4, ../src/sass/tilegame.scss */
 #tilegame {
   position: absolute;
 }
@@ -133,9 +133,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   border-color: black black transparent transparent;
 }
 
-/* line 8, ../src/sass/tilegame.scss */
+/* line 9, ../src/sass/tilegame.scss */
 .socialbutton {
+  -webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.5);
   position: absolute;
-  bottom: 0px;
-  padding: 0.5em;
+  bottom: 8px;
+  right: 8px;
+  padding: 8px;
+  background-color: #cccccc;
+}
+/* line 20, ../src/sass/tilegame.scss */
+.socialbutton a {
+  font-family: sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  color: #333333;
 }
