@@ -31,9 +31,7 @@ Game.prototype.initListener = function () {
 
     window.addEventListener('resize', throttle(function () {
         self.initWindow();
-        self.shapes.forEach(function (shape) {
-            self.roundShapePosition(shape);
-        });
+        self.arrangeShapes();
     }, 500));
 
     window.addEventListener('hashchange', function () {
