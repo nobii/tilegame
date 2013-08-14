@@ -38,6 +38,7 @@ Shape.prototype.initListener = function () {
     var self = this,
         el = this.el;
 
+    // touch
     el.addEventListener('touchstart', function (e) {
         var touch = e.touches[0];
 
@@ -61,9 +62,28 @@ Shape.prototype.initListener = function () {
     el.addEventListener('touchend', function (e) {
         self.endGrip();
     }, false);
+
+    // mouse
+    el.addEventListener('mousedown', function (e) {
+        self.startGrip(e);
+    }, false);
+    el.addEventListener('mousemove', function (e) {
+        e.preventDefault();
+        if (!self.gripped) {
+            return;
+        }
+        self.processGrip(e);
+    }, false);
+    el.addEventListener('mouseup', function (e) {
+        self.endGrip();
+    }, false);
+    el.addEventListener('mouseout', function (e) {
+        self.endGrip();
+    }, false);
 };
 
 Shape.prototype.startGrip = function (e) {
+    this.gripped = true;
     this.prevOffset = [e.pageX, e.pageY];
 };
 
@@ -77,5 +97,6 @@ Shape.prototype.processGrip = function (e) {
 };
 
 Shape.prototype.endGrip = function () {
+    this.gripped = false;
     this.emit('reposition', this);
 };

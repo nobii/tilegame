@@ -1,7 +1,6 @@
 var Game = function (shapes, opts) {
     this.el = opts.el || document.body;
     this.grids = opts.grids || 6;
-    this.size = opts.size || 0;
 
     this.initShapes(shapes || []);
     this.initWindow();
@@ -11,10 +10,11 @@ var Game = function (shapes, opts) {
     } else {
         this.arrangeShapes();
     }
+    this.initListener();
 };
 
 Game.prototype.initWindow = function () {
-    var size = this.size,
+    var size = Math.min(window.innerWidth, window.innerHeight),
         gridSize = size / this.grids;
 
     this.shapes.forEach(function (shape) {
@@ -22,7 +22,23 @@ Game.prototype.initWindow = function () {
         shape.el.style.height = gridSize + 'px';
     });
 
+    this.size = size;
     this.gridSize = gridSize;
+};
+
+Game.prototype.initListener = function () {
+    var self = this;
+
+    window.addEventListener('resize', throttle(function () {
+        self.initWindow();
+        self.shapes.forEach(function (shape) {
+            self.roundShapePosition(shape);
+        });
+    }, 500));
+
+    window.addEventListener('hashchange', function () {
+        self.loadHash();
+    }, false);
 };
 
 Game.prototype.initShapes = function (options) {
