@@ -33,6 +33,6 @@ sns:
 
 ogp:
   image: 
-    url: http://example.com/img/ogp-icon.png
+    url: http://tilegame.fnobi.com/img/ogp-icon.png
     width: 300
     height: 300
