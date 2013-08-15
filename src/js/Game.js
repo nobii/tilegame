@@ -17,6 +17,9 @@ Game.prototype.initWindow = function () {
     var size = Math.min(window.innerWidth, window.innerHeight),
         gridSize = size / this.grids;
 
+    this.el.style.width = size + 'px';
+    this.el.style.height = size + 'px';
+
     this.shapes.forEach(function (shape) {
         shape.el.style.width = gridSize + 'px';
         shape.el.style.height = gridSize + 'px';

@@ -1,8 +1,14 @@
 @import "compass/reset";
 @import "compass/css3/box-shadow";
 
+body {
+    background-color: #eeeeee;
+}
+
 #tilegame {
     position: absolute;
+    background-color: white;
+
     @import "shape";
 }
 
