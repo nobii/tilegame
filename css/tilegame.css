@@ -67,12 +67,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 #tilegame {
   position: absolute;
 }
-/* line 1, ../src/sass/_shape.scss */
+/* line 3, ../src/sass/_shape.scss */
 #tilegame .shape {
   position: absolute;
   overflow: hidden;
 }
-/* line 7, ../src/sass/_shape.scss */
+/* line 9, ../src/sass/_shape.scss */
+#tilegame .shape.gripped {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5;
+  z-index: 10;
+}
+/* line 14, ../src/sass/_shape.scss */
 #tilegame .shape.square:before {
   content: "";
   display: block;
@@ -80,7 +86,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   width: 100%;
   height: 100%;
 }
-/* line 15, ../src/sass/_shape.scss */
+/* line 22, ../src/sass/_shape.scss */
 #tilegame .shape.tri1:before {
   content: "";
   display: block;
@@ -94,7 +100,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   left: -1000px;
   border-color: black transparent transparent black;
 }
-/* line 29, ../src/sass/_shape.scss */
+/* line 36, ../src/sass/_shape.scss */
 #tilegame .shape.tri2:before {
   content: "";
   display: block;
@@ -106,7 +112,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: relative;
   border-color: transparent transparent black black;
 }
-/* line 41, ../src/sass/_shape.scss */
+/* line 48, ../src/sass/_shape.scss */
 #tilegame .shape.tri3:before {
   content: "";
   display: block;
@@ -120,7 +126,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   left: -1000px;
   border-color: transparent black black transparent;
 }
-/* line 55, ../src/sass/_shape.scss */
+/* line 62, ../src/sass/_shape.scss */
 #tilegame .shape.tri4:before {
   content: "";
   display: block;

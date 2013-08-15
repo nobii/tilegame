@@ -13,14 +13,18 @@ var Shape = function (opts) {
 inherits(Shape, EventEmitter);
 
 Shape.prototype.initEl = function () {
-    var el = this.el || document.createElement('div'),
-        x = this.x,
-        y = this.y,
-        type = this.type;
-
-    el.className = ['shape', type].join(' ');
-
+    var el = this.el || document.createElement('div');
     this.el = el;
+
+    this.updateClassname();
+};
+
+Shape.prototype.updateClassname = function () {
+    var names = ['shape', this.type];
+    if (this.gripped) {
+        names.push('gripped');
+    }
+    this.el.className = names.join(' ');
 };
 
 Shape.prototype.posit = function (x, y) {
@@ -85,6 +89,7 @@ Shape.prototype.initListener = function () {
 Shape.prototype.startGrip = function (e) {
     this.gripped = true;
     this.prevOffset = [e.pageX, e.pageY];
+    this.updateClassname();
 };
 
 Shape.prototype.processGrip = function (e) {
@@ -99,4 +104,5 @@ Shape.prototype.processGrip = function (e) {
 Shape.prototype.endGrip = function () {
     this.gripped = false;
     this.emit('reposition', this);
+    this.updateClassname();
 };

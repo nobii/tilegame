@@ -1,8 +1,15 @@
+@import "compass/css3/opacity";
+
 .shape {
     $margin: 2%;
 
     position: absolute;
     overflow: hidden;
+
+    &.gripped {
+        @include opacity(0.5);
+        z-index: 10;
+    }
 
     &.square:before {
         content: "";
