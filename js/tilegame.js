@@ -252,11 +252,27 @@ var Game = function (shapes, opts) {
 };
 
 Game.prototype.initWindow = function () {
-    var size = Math.min(window.innerWidth, window.innerHeight),
+    var el = this.el,
+
+        ww = window.innerWidth,
+        wh = window.innerHeight,
+        size = Math.min(ww, wh),
         gridSize = size / this.grids;
 
-    this.el.style.width = size + 'px';
-    this.el.style.height = size + 'px';
+    el.style.width = size + 'px';
+    el.style.height = size + 'px';
+
+    if (ww > wh) {
+        el.style.top = '0%';
+        el.style.left = '50%';
+        el.style.marginTop = '0px';
+        el.style.marginLeft = - (size / 2) + 'px';
+    } else {
+        el.style.top = '50%';
+        el.style.left = '0%';
+        el.style.marginTop = - (size / 2) + 'px';
+        el.style.marginLeft = '0px';
+    }
 
     this.shapes.forEach(function (shape) {
         shape.el.style.width = gridSize + 'px';
